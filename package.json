@@ -1,0 +1,23 @@
+{
+  "name": "four_timer",
+  "version": "1.0.0",
+  "description": "A four way timer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KermitPurple/four_timer.git"
+  },
+  "author": "Shane McDonough shanemcdman@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KermitPurple/four_timer/issues"
+  },
+  "homepage": "https://github.com/KermitPurple/four_timer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.2"
+  }
+}

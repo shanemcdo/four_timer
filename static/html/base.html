@@ -1,0 +1,19 @@
+{%set title = title | default("Base")%}
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>{{title}}</title>
+        {%block css%}
+        <link rel="stylesheet" href="css/base.css" type="text/css" media="all">
+        {%endblock css%}
+    </head>
+    <body>
+        {%block content%}
+        <p>This is the base.html</p>
+        {%endblock content%}
+    </body>
+    {%block js%}
+    <script src="js/base.js"></script>
+    {%endblock js%}
+</html>
