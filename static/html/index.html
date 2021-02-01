@@ -6,14 +6,9 @@
 {%endblock css%}
 {%block content%}
     <div class="timer_container">
-        <div class="timer">
-        </div>
-        <div class="timer">
-        </div>
-        <div class="timer">
-        </div>
-        <div class="timer">
-        </div>
+        {%for _i in range(4)%}
+            {%include "timer.html"%}
+        {%endfor%}
     </div>
 {%endblock content%}
 {%block js%}
