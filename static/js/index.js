@@ -10,7 +10,7 @@ for(let i = 0; i < 4; i++){
         total_time: timer_divs[i].querySelector('.total_time'),
     });
     timer_divs[i].addEventListener('click', event=>{
-        if(event.target.className == 'color') return;
+        if(event.target.className == 'color' || event.target.className == 'flipper') return;
         if(!timers[i].running){
             timers[i].start();
             timer_divs[i].style.borderColor = 'green';
@@ -28,6 +28,12 @@ for(let i = 0; i < 4; i++){
     let color = timer_divs[i].querySelector('.color');
     color.addEventListener('input', ()=>{
         set_background_color(i, color.value);
+    });
+    timer_divs[i].querySelector('.flipper').addEventListener('click', ()=>{
+        if(timer_divs[i].style.transform == '')
+            timer_divs[i].style.transform = 'rotate(180deg)';
+        else
+            timer_divs[i].style.transform = '';
     });
 }
 

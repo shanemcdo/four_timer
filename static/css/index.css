@@ -16,6 +16,12 @@
     bottom: 5px;
 }
 
+.flipper{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
 .timer_container{
     width: 100%;
     height: 100%;
