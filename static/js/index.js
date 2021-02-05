@@ -11,13 +11,18 @@ for(let i = 0; i < 4; i++){
     });
     timer_divs[i].addEventListener('click', event=>{
         if(event.target.className == 'color') return;
-        if(!timers[i].running)
+        if(!timers[i].running){
             timers[i].start();
-        else
+            timer_divs[i].style.borderColor = 'green';
+        }else{
             timers[i].stop();
+            timer_divs[i].style.borderColor = '';
+        }
         for(let j = 0; j < 4; j++){
-            if(j != i)
+            if(j != i){
                 timers[j].stop();
+                timer_divs[j].style.borderColor = '';
+            }
         }
     });
     let color = timer_divs[i].querySelector('.color');
