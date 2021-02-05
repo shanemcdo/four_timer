@@ -1,6 +1,6 @@
 import Timer from './timer.js';
 
-let timers = [new Timer(150), new Timer(50), new Timer(20), new Timer(300)];
+let timers = [new Timer(15), new Timer(15), new Timer(15), new Timer(15)];
 let timer_divs = document.querySelectorAll('.timer');
 let timer_elements = [];
 for(let i = 0; i < 4; i++){
@@ -9,12 +9,17 @@ for(let i = 0; i < 4; i++){
         time: timer_divs[i].querySelector('.time'),
         total_time: timer_divs[i].querySelector('.total_time'),
     });
-    timer_divs[i].addEventListener('click', ()=>{
+    timer_divs[i].addEventListener('click', event=>{
+        if(event.target.className == 'color') return;
         timers[i].start()
         for(let j = 0; j < 4; j++){
             if(j != i)
                 timers[j].stop();
         }
+    });
+    let color = timer_divs[i].querySelector('.color');
+    color.addEventListener('input', ()=>{
+        set_background_color(i, color.value);
     });
 }
 
@@ -26,5 +31,5 @@ setInterval(()=>{
 }, 200);
 
 function set_background_color(index, color){
-    timer_divs[i].style.background = color;
+    timer_divs[index].style.background = color;
 };

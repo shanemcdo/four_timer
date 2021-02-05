@@ -16,6 +16,6 @@ app.get('/', (req, res)=>{
     res.render('index.html');
 });
 
-app.listen(PORT, ()=>{
-    console.log(`Listening on localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0',()=>{
+    console.log(`Running on http://localhost:${PORT}`);
 });

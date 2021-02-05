@@ -1,8 +1,19 @@
 .timer{
     border: 3px solid #222;
     background: #333;
-    color: #ddd;
+    color: white;
     text-align: center;
+    position: relative;
+}
+
+.time, .total_time{
+    mix-blend-mode: difference;
+}
+
+.color{
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
 }
 
 .timer_container{
