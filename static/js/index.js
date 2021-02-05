@@ -11,7 +11,10 @@ for(let i = 0; i < 4; i++){
     });
     timer_divs[i].addEventListener('click', event=>{
         if(event.target.className == 'color') return;
-        timers[i].start()
+        if(!timers[i].running)
+            timers[i].start();
+        else
+            timers[i].stop();
         for(let j = 0; j < 4; j++){
             if(j != i)
                 timers[j].stop();
