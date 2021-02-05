@@ -11,6 +11,10 @@ for(let i = 0; i < 4; i++){
     });
     timer_divs[i].addEventListener('click', ()=>{
         timers[i].start()
+        for(let j = 0; j < 4; j++){
+            if(j != i)
+                timers[j].stop();
+        }
     });
 }
 
@@ -20,3 +24,7 @@ setInterval(()=>{
         timer_elements[i].total_time.innerHTML = timers[i].total_time_string();
     }
 }, 200);
+
+function set_background_color(index, color){
+    timer_divs[i].style.background = color;
+};

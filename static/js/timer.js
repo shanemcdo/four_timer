@@ -45,4 +45,8 @@ export default class Timer{
         this.end_date.setSeconds(this.end_date.getSeconds() + this.duration);
         this.running = true;
     }
+
+    stop(){
+        this.running = false;
+    }
 }
