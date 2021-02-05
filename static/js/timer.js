@@ -7,6 +7,7 @@ export default class Timer{
         this.duration = duration;
         this.running = false;
         this.total_time = 0;
+        this.ended = false;
         setInterval(()=>{
             if(this.running)
                 this.update();
@@ -34,6 +35,7 @@ export default class Timer{
         let diff = this.end_date - this.previous_date;
         if(diff <= 0){
             this.running = false;
+            this.ended = true;
             return
         }
     }
@@ -44,6 +46,7 @@ export default class Timer{
         this.end_date = new Date(this.start_date);
         this.end_date.setSeconds(this.end_date.getSeconds() + this.duration);
         this.running = true;
+        this.ended = false;
     }
 
     stop(){

@@ -35,6 +35,10 @@ setInterval(()=>{
     for(let i = 0; i < 4; i++){
         timer_elements[i].time.innerHTML = timers[i].date_string();
         timer_elements[i].total_time.innerHTML = timers[i].total_time_string();
+        if(timers[i].ended){
+            timers[i].ended = false;
+            timer_divs[i].style.borderColor = 'red';
+        }
     }
 }, 200);
 
