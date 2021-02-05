@@ -1,27 +1,48 @@
 export default class Timer{
-    constructor(duration = 300){
-        this.start_time = Date.now();
-        this.end_time = new Date(this.start_time);
-        this.end_time.setSeconds(this.end_time.getSeconds() + duration);
+    constructor(duration = 10){
+        this.start_date = Date.now();
+        this.previous_date = Date.now();
+        this.end_date = new Date(this.start_date);
+        this.end_date.setSeconds(this.end_date.getSeconds() + duration);
         this.duration = duration;
-        this.running = true;
+        this.running = false;
+        this.total_time = 0;
         setInterval(()=>{
             if(this.running)
                 this.update();
-        }, 1000);
+        }, 500);
     }
 
-    time_string(){
-        minutes = math.floor(this.time / 60);
-        seconds = this.time % 60;
-        return `${minutes.toFixed(2)}:${seconds.toFixed}`
+    date_string(){
+        return this.milliseconds_to_time_string(this.running ? this.end_date - this.previous_date : this.duration * 1000);
+    }
+
+    total_time_string(){
+        return this.milliseconds_to_time_string(this.total_time);
+    }
+
+    milliseconds_to_time_string(milliseconds){
+        let seconds = Math.abs(Math.ceil(milliseconds / 1000));
+        let minutes = Math.floor(seconds / 60)
+        seconds %= 60;
+        return `${minutes.toLocaleString('en', {minimumIntegerDigits: 2})}:${seconds.toLocaleString('en', {minimumIntegerDigits: 2})}`;
     }
 
     update(){
-        let diff = this.end_time - Date.now();
-        console.log(diff);
+        this.total_time += Date.now() - this.previous_date;
+        this.previous_date = Date.now();
+        let diff = this.end_date - this.previous_date;
         if(diff <= 0){
             this.running = false;
+            return
         }
+    }
+
+    start(){
+        this.start_date = Date.now();
+        this.previous_date = Date.now();
+        this.end_date = new Date(this.start_date);
+        this.end_date.setSeconds(this.end_date.getSeconds() + this.duration);
+        this.running = true;
     }
 }
