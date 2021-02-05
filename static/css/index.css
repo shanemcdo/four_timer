@@ -1,5 +1,7 @@
 .timer{
     border: 5px solid red;
+    background: #333;
+    color: #ddd;
 }
 
 .timer_container{
