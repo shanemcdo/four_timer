@@ -1,4 +1,4 @@
-export default class Timer{
+class Timer{
     constructor(duration = 10){
         this.start_date = Date.now();
         this.previous_date = Date.now();
