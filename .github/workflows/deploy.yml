@@ -33,10 +33,13 @@ jobs:
         run: npm i
         
       - name: Build static files
-        run: npm run build
+        run: |
+          npm run build
+          cp css target/css
+          cp js target/js
       
-      - name: Deplpy
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
-          branch: static_built
+          branch: gh-pages
           folder: target
