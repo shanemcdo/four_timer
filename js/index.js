@@ -1,5 +1,3 @@
-import Timer from './timer.js';
-
 let timers = [new Timer(15), new Timer(15), new Timer(15), new Timer(15)];
 let timer_divs = document.querySelectorAll('.timer');
 let timer_elements = [];

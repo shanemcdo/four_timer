@@ -1,6 +1,7 @@
 {%extends 'base.html'%}
 {%set title = "Index"%}
 {%block css%}
+    <base href=".." target="">
     {{super()}}
     <link rel="stylesheet" href="css/index.css" type="text/css">
 {%endblock css%}
@@ -13,5 +14,6 @@
 {%endblock content%}
 {%block js%}
     {{super()}}
-    <script src="js/index.js" type="module"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/index.js"></script>
 {%endblock js%}
