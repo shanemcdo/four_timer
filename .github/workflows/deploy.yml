@@ -32,11 +32,8 @@ jobs:
       - name: Install npm deps
         run: npm i
         
-      - name: Build static files
-        run: |
-          npm run build
-          cp -r css target/css
-          cp -r js target/js
+      - name: Make
+        run: make
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.2.0
