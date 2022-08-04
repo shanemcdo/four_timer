@@ -8,6 +8,7 @@
 
 .time, .total_time{
     mix-blend-mode: difference;
+    user-select: none;
 }
 
 .color{
