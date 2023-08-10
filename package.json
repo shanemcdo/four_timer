@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/KermitPurple/four_timer.git"
+    "url": "git+ssh://git@github.com/shanemcdo/four_timer.git"
   },
   "author": "Shane McDonough shanemcdman@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KermitPurple/four_timer/issues"
+    "url": "https://github.com/shanemcdo/four_timer/issues"
   },
-  "homepage": "https://github.com/KermitPurple/four_timer#readme",
+  "homepage": "https://github.com/shanemcdo/four_timer#readme",
   "dependencies": {
     "nunjucks": "^3.2.2"
   }
