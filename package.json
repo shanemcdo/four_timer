@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/shanemcdo/four_timer.git"
   },
-  "author": "Shane McDonough shanemcdman@gmail.com",
+  "author": "Shane Walker shanemcdman@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/shanemcdo/four_timer/issues"
